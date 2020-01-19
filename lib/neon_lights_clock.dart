@@ -23,11 +23,6 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
   void initState() {
     super.initState();
 
-//    SystemChrome.setPreferredOrientations([
-//      DeviceOrientation.landscapeRight,
-//      DeviceOrientation.landscapeLeft,
-//    ]);
-
     widget.model.addListener(_updateModel);
     _updateTime();
     _updateModel();
@@ -60,7 +55,8 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
     setState(() {
       _dateTime = DateTime.now();
       _timer = Timer(
-        Duration(seconds: 1) - Duration(milliseconds: _dateTime.millisecond),
+        const Duration(seconds: 1) -
+            Duration(milliseconds: _dateTime.millisecond),
         _updateTime,
       );
     });
@@ -81,8 +77,6 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
 
     final double digitFontSize = MediaQuery.of(context).size.width / 4;
 
-    final double spacingWidth = MediaQuery.of(context).size.width / 100;
-
     final String temperature = widget.model.temperatureString;
     final String condition = widget.model.weatherString;
 
@@ -90,21 +84,21 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
       color: Colors.white,
       fontFamily: 'Beon',
       fontSize: digitFontSize,
-      shadows: [
+      shadows: <Shadow>[
         Shadow(
           blurRadius: 0,
           color: Colors.black38,
-          offset: Offset(10, 10),
+          offset: const Offset(10, 10),
         ),
         Shadow(
           blurRadius: 50,
           color: Colors.white,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
         Shadow(
           blurRadius: 30,
           color: Colors.yellow,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
       ],
     );
@@ -113,21 +107,21 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
       color: Colors.black54,
       fontFamily: 'Beon',
       fontSize: digitFontSize,
-      shadows: [
+      shadows: <Shadow>[
         Shadow(
           blurRadius: 0,
           color: Colors.black,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
         Shadow(
           blurRadius: 0,
           color: Colors.black38,
-          offset: Offset(10, 10),
+          offset: const Offset(10, 10),
         ),
         Shadow(
           blurRadius: 30,
           color: Colors.black,
-          offset: Offset(10, 0),
+          offset: const Offset(10, 0),
         ),
       ],
     );
@@ -136,21 +130,21 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
       color: Colors.white,
       fontFamily: 'Beon',
       fontSize: MediaQuery.of(context).size.width / 15,
-      shadows: [
+      shadows: <Shadow>[
         Shadow(
           blurRadius: 0,
           color: Colors.black38,
-          offset: Offset(4, 4),
+          offset: const Offset(4, 4),
         ),
         Shadow(
           blurRadius: 30,
           color: Colors.white,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
         Shadow(
           blurRadius: 20,
           color: Colors.blue,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
       ],
     );
@@ -159,16 +153,16 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
       color: Colors.white24,
       fontFamily: 'Beon',
       fontSize: MediaQuery.of(context).size.width / 15,
-      shadows: [
+      shadows: <Shadow>[
         Shadow(
           blurRadius: 0,
           color: Colors.black38,
-          offset: Offset(4, 4),
+          offset: const Offset(4, 4),
         ),
         Shadow(
           blurRadius: 30,
           color: Colors.black38,
-          offset: Offset(0, 0),
+          offset: const Offset(0, 0),
         ),
       ],
     );
@@ -188,33 +182,33 @@ class _NeonLightsClockState extends State<NeonLightsClock> {
         color: Colors.white,
         fontFamily: 'Beon',
         fontSize: MediaQuery.of(context).size.width / 25,
-        shadows: [
+        shadows: <Shadow>[
           Shadow(
             blurRadius: 0,
             color: Colors.black54,
-            offset: Offset(4, 4),
+            offset: const Offset(4, 4),
           ),
           Shadow(
             blurRadius: 20,
             color: Colors.white,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
           Shadow(
             blurRadius: 10,
             color: Colors.lightBlue,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
           Shadow(
             blurRadius: 8,
             color: Colors.blue,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
         ]);
 
     return Container(
       decoration: BoxDecoration(
         color: Colors.black,
-        image: DecorationImage(
+        image: const DecorationImage(
           image: AssetImage('assets/brick_wall.jpg'),
           fit: BoxFit.cover,
         ),
@@ -342,26 +336,26 @@ class DayWidget extends StatelessWidget {
         color: Colors.white,
         fontFamily: 'Beon',
         fontSize: MediaQuery.of(context).size.width / 25,
-        shadows: [
+        shadows: <Shadow>[
           Shadow(
             blurRadius: 0,
             color: Colors.black38,
-            offset: Offset(3, 3),
+            offset: const Offset(3, 3),
           ),
           Shadow(
             blurRadius: 20,
             color: Colors.white,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
           Shadow(
             blurRadius: 10,
             color: Colors.lightBlue,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
           Shadow(
             blurRadius: 8,
             color: Colors.blue,
-            offset: Offset(0, 0),
+            offset: const Offset(0, 0),
           ),
         ]);
 
@@ -369,15 +363,15 @@ class DayWidget extends StatelessWidget {
         color: Colors.white24,
         fontFamily: 'Beon',
         fontSize: MediaQuery.of(context).size.width / 25,
-        shadows: [
+        shadows: <Shadow>[
           Shadow(
             blurRadius: 0,
             color: Colors.black38,
-            offset: Offset(3, 3),
+            offset: const Offset(3, 3),
           ),
         ]);
 
-    final List<String> weekDays = [
+    final List<String> weekDays = <String>[
       'MON',
       'TUES',
       'WED',
